@@ -5,6 +5,8 @@ A(nother) flappy bird clone created by following the excellent codevinky tutoria
 This is to get me knee deep in Phaser.js in preperation for an upcoming Uni assignment. As a bi-product using git in conjunction with 
 bower, yeoman and grunt.
 
+Please excuse the over commenting, I'll be refering back to this project alot.
+
 ## Instructions
 
 1. Clone repositry
