@@ -23,14 +23,17 @@ Preload.prototype = {
     //this.load.spritesheet(key, url, frameWidth, frameHeight, numberOfFrames);
     this.load.spritesheet('bird', 'assets/bird.png', 34, 24, 3);
   },
+
   create: function() {
     this.asset.cropEnabled = false;
   },
+
   update: function() {
     if(!!this.ready) {
-      this.game.state.start('menu');
+      this.game.state.start('play');
     }
   },
+  
   onLoadComplete: function() {
     this.ready = true;
   }
