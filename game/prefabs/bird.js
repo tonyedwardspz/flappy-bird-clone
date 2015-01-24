@@ -10,8 +10,15 @@ var Bird = function(game, x, y, frame) {
   this.animations.add('flap');
   this.animations.play('flap', 12, true);
 
+  // disable the birds alive state
+  this.alive = false;
+
   // enable physics on the prefab
   this.game.physics.arcade.enableBody(this);
+  this.body.allowGravity = false;
+
+  //add sound
+  this.flapSound = this.game.add.audio('flap');
   
 };
 
@@ -21,13 +28,14 @@ Bird.prototype.constructor = Bird;
 Bird.prototype.update = function() {
   
   // rotate bird toward ground if angle is less than 2.5 degrees
-  if (this.angle < 90){
+  if (this.angle < 90 && this.alive){
   	this.angle += 2.5;
   }
   
 };
 
 Bird.prototype.flap = function() {
+  this.flapSound.play();
   
   // make the bird flap upwards (400px per second)
   this.body.velocity.y = -400;
